@@ -1,3 +1,4 @@
+# ------------------------------ EX1 - Part 1 ------------------------------ #
 ex1 <- read.csv("D:/dbs/MO430/ex1.csv")
 
 ex1$type <- sapply(ex1$type, as.character)
@@ -5,8 +6,8 @@ ex1[which(ex1$type == 'No'),"type"] <- 0
 ex1[which(ex1$type == 'Yes'),"type"] <- 1
 ex1$type <- sapply(ex1$type, as.numeric)
 
-bpNo <- array(ex1[which(ex1$type == 0),"type"])
-bpYes <- array(ex1[which(ex1$type == 1),"type"])
+bpNo <- array()
+bpYes <- array()
 y <- 1
 z <- 1
 
@@ -21,8 +22,8 @@ for(i  in 1:length(ex1$type)){
   }
 }
 
-cat("Mediana das pessoas diabéticas: ",median(bpYes))
-cat("Mediana das pessoas não diabéticas: ",median(bpNo))
+cat("Mediana das pessoas diabéticas: ", median(bpYes))
+cat("Mediana das pessoas não diabéticas: ", median(bpNo))
 
 if(median(bpYes) < median(bpNo)){
   cat("Pessoas não diabéticas tem maior pressão.")
@@ -34,7 +35,7 @@ if(median(bpYes) < median(bpNo)){
 t.test(bpNo,bpYes)
 wilcox.test(bpNo,bpYes)
 
-#----------------------------------------EX1 - Part 2------------------------------
+# ------------------------------ EX1 - Part 2 ------------------------------ #
 
 ex1Paired <- read.csv("D:/dbs/MO430/ex1-paired.csv")
 
@@ -50,12 +51,14 @@ cat("A mediana do mês de Agosto é: ",median(Aug))
 cat("A mediana do mês de Novembro é: ",median(Nov))
 
 if(mean(Aug) < mean(Nov)){
-  cat("A maior média é do  mês Novembro com valor: ",mean(Nov), " e mediana: ",median(Nov))
+  cat("A maior média é do  mês Novembro com valor: ",
+      mean(Nov), " e mediana: ",median(Nov))
 }else{
-  cat("A maior média é do  mês Agosto com valor: ",mean(Aug), " e mediana: ",median(Aug))
+  cat("A maior média é do  mês Agosto com valor: ",mean(Aug),
+      " e mediana: ",median(Aug))
 }
 
-#----------------------------------------EX1 - Part 3------------------------------
+# ------------------------------ EX1 - Part 3 ------------------------------ #
 
 # ----- Gerar conjuntos com n = 30, x = 10 e 12 e sd =5  ----- #
 fonteA <- rnorm(n = 30, mean = 10, sd = 5)

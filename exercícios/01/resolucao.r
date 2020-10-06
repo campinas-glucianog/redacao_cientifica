@@ -51,16 +51,20 @@ cat("A mediana do mês de Agosto é: ",median(Aug))
 cat("A mediana do mês de Novembro é: ",median(Nov))
 
 if(mean(Aug) < mean(Nov)){
-  cat("A maior média é do  mês Novembro com valor: ",
-      mean(Nov), " e mediana: ",median(Nov))
+  cat("A maior média é do  mês Novembro com valor: ",mean(Nov))
 }else{
-  cat("A maior média é do  mês Agosto com valor: ",mean(Aug),
-      " e mediana: ",median(Aug))
+  cat("A maior média é do  mês Agosto com valor: ",mean(Aug))
+}
+if(median(Aug) < median(Nov)){
+  cat("A maior mediana é do  mês Novembro com valor: ",mean(Nov))
+}else{
+  cat("A maior mediana é do  mês Agosto com valor: ",mean(Aug))
 }
 
 # ------------------------------ EX1 - Part 3 ------------------------------ #
 
 # ----- Gerar conjuntos com n = 30, x = 10 e 12 e sd =5  ----- #
+set.seed(1234)
 fonteA <- rnorm(n = 30, mean = 10, sd = 5)
 fonteB <- rnorm(n = 30, mean = 12, sd = 5)
 
@@ -107,7 +111,7 @@ for(i in 1:50) {
   pVal[i] <- t.test(fonteA, fonteB)$p.value
 }
 
-cat("Média do valor de p-value para méidas = 10 e 15:", mean(pVal))
+cat("Média do valor de p-value para médias = 10 e 15:", mean(pVal))
 
 # ------------------------------------------------------------ #
 # ------------ UTILIZANDO O WILCOXON RANK-SUM  --------------- #
@@ -151,4 +155,4 @@ for(i in 1:50) {
   pVal[i] <- wilcox.test(fonteA, fonteB)$p.value
 }
 
-cat("Média do valor de p-value para méidas = 10 e 15:", mean(pVal))
+cat("Média do valor de p-value para médias = 10 e 15:", mean(pVal))

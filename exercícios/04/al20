@@ -1,0 +1,7 @@
+Three approaches are studied to incorporate agent intelligence with high-performance computing systems; the first at the task level, the second at the core level and the third both at the task and core level.
+This paper describes an experimental investigation into multi-agent approaches to bring in this intelligence to high-performance computing systems.
+The key result is that a task can be relocated without manual intervention and with a time delay in the order of milliseconds.
+Intelligent approaches which can pro-actively detect computing core failures and take action to relocate the computing core’s task onto reliable cores can make a significant step towards automating fault tolerance in high-performance computing systems.
+This places a cost on the maintenance of computing tasks.
+fail.
+The approaches are investigated for single core failure scenarios that can occur in the execution of parallel reduction algorithms on computer clusters.
